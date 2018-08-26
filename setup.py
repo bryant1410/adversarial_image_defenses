@@ -42,7 +42,7 @@ if ext_code_download:
                                "tensorflow-model-zoo.torch/"
                                "f43005c4b4cdd745e9788b22e182c91453c54daf/"
                                "inceptionresnetv2/pytorch_load.py")
-    urlopener = urllib.URLopener()
+    urlopener = urllib.FancyURLopener()
     urlopener.retrieve(INCEPTION_V4_URL, os.path.join(MODEL_DIR, "inceptionv4.py"))
     urlopener.retrieve(INCEPTION_RESNET_V2_URL,
                        os.path.join(MODEL_DIR, "inceptionresnetv2.py"))
@@ -51,7 +51,7 @@ if ext_code_download:
     DENOISE_URL = ("https://raw.githubusercontent.com/scikit-image/scikit-image/"
                    "902a9a68add274c4125a358b29e3263b9d94f686/skimage/"
                    "restoration/_denoise_cy.pyx")
-    urlopener = urllib.URLopener()
+    urlopener = urllib.FancyURLopener()
     urlopener.retrieve(DENOISE_URL, os.path.join(TRANSFORMATION_DIR, "_denoise_cy.pyx"))
     # Apply patch to support TVM compressed sensing
     # _tv_bregman.patch was created from commit 902a9a6
@@ -63,7 +63,7 @@ if ext_code_download:
 
     # Download and unzip the code for maxflow
     MAXFLOW_URL = "http://vision.csd.uwo.ca/code/maxflow-v3.01.zip"
-    urlopener = urllib.URLopener()
+    urlopener = urllib.FancyURLopener()
     maxflow_file = os.path.join(TRANSFORMATION_DIR, "maxflow.zip")
     urlopener.retrieve(MAXFLOW_URL, maxflow_file)
     zip_ref = zipfile.ZipFile(maxflow_file, 'r')
