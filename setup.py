@@ -62,7 +62,7 @@ if ext_code_download:
     process.communicate()
 
     # Download and unzip the code for maxflow
-    MAXFLOW_URL = "http://vision.csd.uwo.ca/code/maxflow-v3.01.zip"
+    MAXFLOW_URL = "https://github.com/manjunathnarayana/backgroundModeling/raw/master/max_flow_min_cut_wrapper/maxflow-v3.0/maxflow-v3.01.zip"
     urlopener = urllib.URLopener()
     maxflow_file = os.path.join(TRANSFORMATION_DIR, "maxflow.zip")
     urlopener.retrieve(MAXFLOW_URL, maxflow_file)
